@@ -38,3 +38,6 @@ You will find starter code for the project in the .yaml file, also located in th
 - aws cloudformation delete-stack --stack-name UdacityDevOps-Project2NetworkDeploy
 - aws cloudformation delete-stack --stack-name UdacityDevOps-Project2ServersDeploy
 
+### Launching Auto Scaling Configuration ###
+- s3://udacity-demo-1/udacity.zip .dacity.zip .
+

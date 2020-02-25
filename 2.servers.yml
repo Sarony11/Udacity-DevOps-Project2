@@ -1,5 +1,5 @@
 Description: >
-    Saul Fernandez / Udacity Project 2 2019
+    Saul Fernandez / Udacity DevOps Project 2
 Parameters:
   EnvironmentName:
     Description: An Environment name that will be prefixed to resources
@@ -56,10 +56,10 @@ Resources:
           apt-get install awscli -y
           apt-get install apache2 -y
           apt-get install unzip -y
+          systemctl start apache2.service
           cd /var/www/html
           aws s3 cp s3://udacity-demo-1/udacity.zip .dacity.zip .
-          unzip -o udacity.zip
-          systemctl start apache2.service
+          unzip udacity.zip
       ImageId: ami-005bdb005fb00e791
       SecurityGroups:
       - Ref: WebServerSecGroup

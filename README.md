@@ -41,3 +41,6 @@ You will find starter code for the project in the .yaml file, also located in th
 ### Launching Auto Scaling Configuration ###
 - s3://udacity-demo-1/udacity.zip .dacity.zip .
 
+# Web App Link #
+- http://udaci-webap-1pmzxe57gu84o-822318039.us-west-2.elb.amazonaws.com/
+

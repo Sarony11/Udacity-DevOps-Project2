@@ -24,17 +24,17 @@ You will find starter code for the project in the .yaml file, also located in th
 # Documentation #
 ## AWS Commands ##
 ### Configuring AWS ###
-> aws configure
+- aws configure
 
 ### Creating Stack ###
-> aws cloudformation create-stack --stack-name UdacityDevOps-Project2NetworkDeploy --template-body file://1.network.yml --parameters file://1.network-parameters.json --region=us-west-2
-> aws cloudformation create-stack --stack-name UdacityDDevOps-Project2ServersDeploy --template-body file://2.servers.yml --parameters file://2.servers-parameters.json --region=us-west-2
+- aws cloudformation create-stack --stack-name UdacityDevOps-Project2NetworkDeploy --template-body file://1.network.yml --parameters file://1.network-parameters.json --region=us-west-2
+- aws cloudformation create-stack --stack-name UdacityDDevOps-Project2ServersDeploy --template-body file://2.servers.yml --parameters file://2.servers-parameters.json --region=us-west-2
 
 ### Updating Stack ###
-> aws cloudformation update-stack --stack-name UdacityDevOps-Project2NetworkDeploy --template-body file://1.network.yml --parameters file://1.network-parameters.json --region=us-west-2
-> aws cloudformation update-stack --stack-name UdacityDDevOps-Project2ServersDeploy --template-body file://2.servers.yml --parameters file://2.servers-parameters.json --region=us-west-2
+- aws cloudformation update-stack --stack-name UdacityDevOps-Project2NetworkDeploy --template-body file://1.network.yml --parameters file://1.network-parameters.json --region=us-west-2
+- aws cloudformation update-stack --stack-name UdacityDDevOps-Project2ServersDeploy --template-body file://2.servers.yml --parameters file://2.servers-parameters.json --region=us-west-2
 
 ### Deleting Stack ###
-> aws cloudformation delete-stack --stack-name UdacityDevOps-Project2NetworkDeploy
-> aws cloudformation delete-stack --stack-name UdacityDevOps-Project2ServersDeploy
+- aws cloudformation delete-stack --stack-name UdacityDevOps-Project2NetworkDeploy
+- aws cloudformation delete-stack --stack-name UdacityDevOps-Project2ServersDeploy
 

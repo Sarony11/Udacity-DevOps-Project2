@@ -92,11 +92,11 @@ Resources:
           apt-get install unzip -y
           systemctl start apache2.service
           cd /var/www/html
-          wget --no-check-certificate https://jenkins-bucket.s3-us-west-2.amazonaws.com/udacity.zip
+          aws s3 cp s3://jenkins-bucket/udacity.zip
           unzip -o udacity.zip
       ImageId: ami-005bdb005fb00e791
       IamInstanceProfile: 
-      - Ref: 
+      - Ref: AWSInstanceProfile
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.small

@@ -46,6 +46,40 @@ Resources:
         ToPort: 65535
         CidrIp: 0.0.0.0/0
 
+  AWSInstanceProfile:
+    Type: AWS::IAM::InstanceProfile
+    Properties:
+      Path: "/"
+      Roles:
+      - Ref: AWSRole
+  
+  AWSRole:
+    Type: AWS::IAM::Role
+    Properties:
+      AssumeRolePolicyDocument:
+        Version: '2012-10-17'
+        Statement:
+        - Effect: Allow
+          Principal:
+            Service:
+            - ec2.amazonaws.com
+          Action:
+          - sts:AssumeRole
+      Path: "/"
+
+    AWSPolicy:
+      Type: AWS::IAM::Policy
+      Properties:
+        PolicyName: AmazonS3ReadOnlyAccess
+        PolicyDocument:
+          Statement:
+          - Effect: Allow
+            Action:
+            - s3:List*
+            Resource: "*"
+        Roles:
+        - Ref: AWSRole
+
   WebAppLaunchConfig:
     Type: AWS::AutoScaling::LaunchConfiguration
     Properties:
@@ -61,6 +95,8 @@ Resources:
           wget --no-check-certificate https://jenkins-bucket.s3-us-west-2.amazonaws.com/udacity.zip
           unzip -o udacity.zip
       ImageId: ami-005bdb005fb00e791
+      IamInstanceProfile: 
+      - Ref: 
       SecurityGroups:
       - Ref: WebServerSecGroup
       InstanceType: t3.small
